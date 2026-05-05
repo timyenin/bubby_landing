@@ -156,6 +156,18 @@ img {
   display: block;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 h1,
 h2,
 h3,
@@ -2422,9 +2434,86 @@ p {
   font-size: 1.12rem;
 }
 
-.final-copy .button {
-  margin-top: 28px;
-  min-width: 310px;
+.waitlist-form {
+  width: min(560px, 100%);
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.waitlist-form input[type="email"] {
+  min-height: 56px;
+  width: 100%;
+  padding: 0 20px;
+  border: 2px solid rgba(196, 117, 206, 0.5);
+  border-radius: 999px;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 252, 0.86));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 12px 26px rgba(91, 45, 120, 0.08);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.waitlist-form input[type="email"]::placeholder {
+  color: rgba(109, 85, 144, 0.68);
+}
+
+.waitlist-form input[type="email"]:focus {
+  border-color: rgba(238, 111, 167, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 0 0 4px rgba(255, 184, 217, 0.28),
+    0 12px 26px rgba(91, 45, 120, 0.08);
+}
+
+.waitlist-form input[type="email"]:disabled,
+.waitlist-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.waitlist-form .button {
+  min-width: 180px;
+  border: 0;
+}
+
+.waitlist-message {
+  grid-column: 1 / -1;
+  min-height: 20px;
+  margin-top: 2px;
+  color: #765797;
+  font-size: 0.92rem;
+  font-weight: 850;
+}
+
+.waitlist-message:empty {
+  display: none;
+}
+
+.waitlist-message--success {
+  color: #5c8d56;
+}
+
+.waitlist-message--error {
+  color: #c64984;
+}
+
+.waitlist-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .final-rainbow {
@@ -2905,7 +2994,11 @@ p {
     order: 1;
   }
 
-  .final-copy .button {
+  .waitlist-form {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-form .button {
     min-width: 0;
   }
 
