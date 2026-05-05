@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><path d="M32 7l7 17 18 2-14 12 4 18-15-10-15 10 4-18L7 26l18-2 7-17Z" fill="#C8A8FF" stroke="#4C2A67" stroke-width="3" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="starFill" x1="16" y1="12" x2="49" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4E8FF"/>
+      <stop offset=".5" stop-color="#CBAAFF"/>
+      <stop offset="1" stop-color="#A98BEF"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 7.5 39.2 24l17.3 2.1-13.1 11.6 3.7 17.1L32 45.9 17 54.8l3.6-17.1L7.5 26.1 24.8 24 32 7.5Z" fill="url(#starFill)" stroke="#4C2A67" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M31.8 16.2 36 26l10.2 1.2-7.8 6.8 2.2 10.1-8.8-5.2-8.8 5.2 2.2-10.1-7.8-6.8L27.6 26l4.2-9.8Z" fill="white" opacity=".28"/>
+  <path d="M23 24.2 32 12.8" stroke="white" stroke-width="2.4" stroke-linecap="round" opacity=".72"/>
+  <path d="M50.5 11.5 52 15l3.6.5-2.7 2.4.7 3.6-3.1-2-3.1 2 .7-3.6-2.7-2.4L49 15l1.5-3.5Z" fill="#FFF2AE" stroke="#ECA24E" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M12.4 43.5 13.5 46l2.6.4-2 1.7.5 2.6-2.2-1.4-2.2 1.4.5-2.6-2-1.7 2.6-.4 1.1-2.5Z" fill="#FFE2F0" stroke="#E56EA4" stroke-width="1.4" stroke-linejoin="round"/>
+</svg>

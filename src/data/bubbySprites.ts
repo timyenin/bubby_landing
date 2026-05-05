@@ -7,6 +7,8 @@ export type BubbyState =
   | 'recovery'
   | 'workout';
 
+const defaultBubbyColorId = 'clear';
+
 export const spriteFallbackFrames: Record<BubbyState, string[]> = {
   idle: [
     '/assets/sprites/bubby_states/idle/idle_01.png',
@@ -47,6 +49,29 @@ export const spriteFallbackFrames: Record<BubbyState, string[]> = {
   ],
 };
 
+export const spriteFrameDurations: Record<BubbyState, number> = {
+  idle: 900,
+  eating: 300,
+  happy_bounce: 220,
+  sleepy: 850,
+  sick: 750,
+  recovery: 550,
+  workout: 260,
+};
+
 export function getFirstSpriteFrame(state: BubbyState): string {
   return spriteFallbackFrames[state][0];
+}
+
+export function getSpriteFrames(state: BubbyState, colorId = defaultBubbyColorId): string[] {
+  const frames = spriteFallbackFrames[state];
+
+  if (!colorId || colorId === defaultBubbyColorId) {
+    return frames;
+  }
+
+  return frames.map((frame) => {
+    const fileName = frame.split('/').pop();
+    return `/assets/sprites/bubby_colors/${colorId}/${state}/${fileName}`;
+  });
 }

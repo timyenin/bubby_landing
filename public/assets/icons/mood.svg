@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="moodFace" x1="14" y1="12" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9FC8"/>
+      <stop offset=".52" stop-color="#F66EAA"/>
+      <stop offset="1" stop-color="#E85297"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="22" fill="url(#moodFace)" stroke="#4C2A67" stroke-width="3"/>
+  <circle cx="24.5" cy="28" r="3.5" fill="#4C2A67"/>
+  <circle cx="39.5" cy="28" r="3.5" fill="#4C2A67"/>
+  <path d="M24.5 38.5c3.8 5.1 11.2 5.1 15 0" stroke="#4C2A67" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="20.5" cy="35.5" r="3.6" fill="#FFB1D1" opacity=".86"/>
+  <circle cx="43.5" cy="35.5" r="3.6" fill="#FFB1D1" opacity=".86"/>
+  <path d="M19.5 19.5c3.5-4 8.8-5.8 14.3-4.9" stroke="white" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+</svg>
