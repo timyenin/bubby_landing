@@ -1,0 +1,169 @@
+{
+  "asset_root": "public/assets when copied into Vite repo",
+  "files": [
+    {
+      "path": "asset-manifest.json",
+      "bytes": 6103
+    },
+    {
+      "path": "backgrounds/pastel-cloud-rainbow-bg.svg",
+      "bytes": 1112
+    },
+    {
+      "path": "backgrounds/simple-meal-bowl.svg",
+      "bytes": 748
+    },
+    {
+      "path": "icons/bowl.svg",
+      "bytes": 405
+    },
+    {
+      "path": "icons/clipboard.svg",
+      "bytes": 354
+    },
+    {
+      "path": "icons/cloud.svg",
+      "bytes": 242
+    },
+    {
+      "path": "icons/grocery.svg",
+      "bytes": 377
+    },
+    {
+      "path": "icons/heart.svg",
+      "bytes": 253
+    },
+    {
+      "path": "icons/lightning.svg",
+      "bytes": 198
+    },
+    {
+      "path": "icons/pencil.svg",
+      "bytes": 291
+    },
+    {
+      "path": "icons/sad-face.svg",
+      "bytes": 340
+    },
+    {
+      "path": "icons/star.svg",
+      "bytes": 222
+    },
+    {
+      "path": "icons/swirl.svg",
+      "bytes": 229
+    },
+    {
+      "path": "reference/bubby-sprite-sheet-reference.png",
+      "bytes": 48882
+    },
+    {
+      "path": "reference/landing-page-preview.png",
+      "bytes": 1544235
+    },
+    {
+      "path": "reference/landing-page-section-map.png",
+      "bytes": 1356701
+    },
+    {
+      "path": "sprites/bubby-animation-map.json",
+      "bytes": 2609
+    },
+    {
+      "path": "sprites/bubby-spritesheet-transparent-360-grid.png",
+      "bytes": 26560
+    },
+    {
+      "path": "sprites/bubby_states/eating/eating_01.png",
+      "bytes": 1593
+    },
+    {
+      "path": "sprites/bubby_states/eating/eating_02.png",
+      "bytes": 1603
+    },
+    {
+      "path": "sprites/bubby_states/eating/eating_03.png",
+      "bytes": 1544
+    },
+    {
+      "path": "sprites/bubby_states/eating/eating_04.png",
+      "bytes": 1550
+    },
+    {
+      "path": "sprites/bubby_states/happy_bounce/happy_bounce_01.png",
+      "bytes": 1550
+    },
+    {
+      "path": "sprites/bubby_states/happy_bounce/happy_bounce_02.png",
+      "bytes": 1572
+    },
+    {
+      "path": "sprites/bubby_states/happy_bounce/happy_bounce_03.png",
+      "bytes": 1553
+    },
+    {
+      "path": "sprites/bubby_states/happy_bounce/happy_bounce_04.png",
+      "bytes": 1517
+    },
+    {
+      "path": "sprites/bubby_states/idle/idle_01.png",
+      "bytes": 1572
+    },
+    {
+      "path": "sprites/bubby_states/idle/idle_02.png",
+      "bytes": 1541
+    },
+    {
+      "path": "sprites/bubby_states/recovery/recovery_01.png",
+      "bytes": 1572
+    },
+    {
+      "path": "sprites/bubby_states/recovery/recovery_02.png",
+      "bytes": 1572
+    },
+    {
+      "path": "sprites/bubby_states/recovery/recovery_03.png",
+      "bytes": 1550
+    },
+    {
+      "path": "sprites/bubby_states/recovery/recovery_04.png",
+      "bytes": 1514
+    },
+    {
+      "path": "sprites/bubby_states/sick/sick_01.png",
+      "bytes": 1572
+    },
+    {
+      "path": "sprites/bubby_states/sick/sick_02.png",
+      "bytes": 1542
+    },
+    {
+      "path": "sprites/bubby_states/sick/sick_03.png",
+      "bytes": 1536
+    },
+    {
+      "path": "sprites/bubby_states/sleepy/sleepy_01.png",
+      "bytes": 1554
+    },
+    {
+      "path": "sprites/bubby_states/sleepy/sleepy_02.png",
+      "bytes": 1573
+    },
+    {
+      "path": "sprites/bubby_states/workout/workout_01.png",
+      "bytes": 1576
+    },
+    {
+      "path": "sprites/bubby_states/workout/workout_02.png",
+      "bytes": 1571
+    },
+    {
+      "path": "sprites/bubby_states/workout/workout_03.png",
+      "bytes": 1588
+    },
+    {
+      "path": "sprites/bubby_states/workout/workout_04.png",
+      "bytes": 1562
+    }
+  ]
+}

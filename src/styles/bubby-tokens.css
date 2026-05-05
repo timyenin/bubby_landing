@@ -1,0 +1,18 @@
+:root {
+  --bubby-bg: #fff5fb;
+  --bubby-bg-2: #f8f0ff;
+  --bubby-card: rgba(255, 255, 255, 0.82);
+  --bubby-pink: #ee6fa7;
+  --bubby-pink-strong: #df4f91;
+  --bubby-lavender: #c9a7ff;
+  --bubby-purple: #3d2461;
+  --bubby-muted: #7d6996;
+  --bubby-blue: #a9d8ff;
+  --bubby-yellow: #ffd884;
+  --bubby-green: #a8de96;
+  --bubby-radius-xl: 32px;
+  --bubby-radius-lg: 24px;
+  --bubby-radius-md: 18px;
+  --bubby-shadow-soft: 0 22px 60px rgba(81, 38, 111, 0.12);
+  --bubby-shadow-card: 0 12px 35px rgba(81, 38, 111, 0.09);
+}

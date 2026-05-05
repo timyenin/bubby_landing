@@ -1,0 +1,83 @@
+{
+  "frameSize": {
+    "width": 360,
+    "height": 360
+  },
+  "states": {
+    "idle": {
+      "loop": true,
+      "frameDurationMs": 900,
+      "frames": [
+        "/assets/sprites/bubby_states/idle/idle_01.png",
+        "/assets/sprites/bubby_states/idle/idle_02.png"
+      ]
+    },
+    "eating": {
+      "loop": true,
+      "frameDurationMs": 300,
+      "frames": [
+        "/assets/sprites/bubby_states/eating/eating_01.png",
+        "/assets/sprites/bubby_states/eating/eating_02.png",
+        "/assets/sprites/bubby_states/eating/eating_03.png",
+        "/assets/sprites/bubby_states/eating/eating_04.png"
+      ]
+    },
+    "happy_bounce": {
+      "loop": true,
+      "frameDurationMs": 220,
+      "frames": [
+        "/assets/sprites/bubby_states/happy_bounce/happy_bounce_01.png",
+        "/assets/sprites/bubby_states/happy_bounce/happy_bounce_02.png",
+        "/assets/sprites/bubby_states/happy_bounce/happy_bounce_03.png",
+        "/assets/sprites/bubby_states/happy_bounce/happy_bounce_04.png"
+      ]
+    },
+    "sleepy": {
+      "loop": true,
+      "frameDurationMs": 850,
+      "frames": [
+        "/assets/sprites/bubby_states/sleepy/sleepy_01.png",
+        "/assets/sprites/bubby_states/sleepy/sleepy_02.png"
+      ]
+    },
+    "sick": {
+      "loop": true,
+      "frameDurationMs": 750,
+      "frames": [
+        "/assets/sprites/bubby_states/sick/sick_01.png",
+        "/assets/sprites/bubby_states/sick/sick_02.png",
+        "/assets/sprites/bubby_states/sick/sick_03.png"
+      ]
+    },
+    "recovery": {
+      "loop": true,
+      "frameDurationMs": 550,
+      "frames": [
+        "/assets/sprites/bubby_states/recovery/recovery_01.png",
+        "/assets/sprites/bubby_states/recovery/recovery_02.png",
+        "/assets/sprites/bubby_states/recovery/recovery_03.png",
+        "/assets/sprites/bubby_states/recovery/recovery_04.png"
+      ]
+    },
+    "workout": {
+      "loop": true,
+      "frameDurationMs": 260,
+      "frames": [
+        "/assets/sprites/bubby_states/workout/workout_01.png",
+        "/assets/sprites/bubby_states/workout/workout_02.png",
+        "/assets/sprites/bubby_states/workout/workout_03.png",
+        "/assets/sprites/bubby_states/workout/workout_04.png"
+      ]
+    }
+  },
+  "notes": "Each frame is a transparent PNG. Use image-rendering: pixelated; display around 120-240px wide depending on section. Interior is transparent by design.",
+  "aliases": {
+    "planDinner": "happy_bounce",
+    "logMeal": "eating",
+    "needEasyFood": "recovery",
+    "checkIn": "idle",
+    "tired": "sleepy",
+    "missedCheckin": "sick",
+    "workoutComplete": "workout"
+  }
+}
