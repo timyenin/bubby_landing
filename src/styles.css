@@ -825,7 +825,7 @@ p {
 
 .speech-pop {
   position: absolute;
-  top: 7px;
+  top: 21px;
   right: 6px;
   z-index: 4;
   max-width: 146px;
@@ -892,7 +892,7 @@ p {
 
 .lcd-heart-bubble {
   position: absolute;
-  top: 57px;
+  top: 71px;
   right: 50px;
   z-index: 1;
   width: 42px;
@@ -2862,9 +2862,14 @@ p {
   }
 
   .speech-pop {
+    top: 7px;
     left: 10px;
     right: 10px;
     max-width: none;
+  }
+
+  .lcd-heart-bubble {
+    top: 57px;
   }
 
   .stats-panel {
