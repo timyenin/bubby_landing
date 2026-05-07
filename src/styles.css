@@ -2351,7 +2351,7 @@ p {
   align-self: end;
   justify-self: center;
   left: 8px;
-  margin-bottom: -8px;
+  margin-bottom: -32px;
 }
 
 .final-cloud {
@@ -2388,7 +2388,7 @@ p {
 .final-heart-bubble {
   position: absolute;
   left: 198px;
-  top: 46px;
+  top: 70px;
   z-index: 3;
   width: 58px;
   height: 48px;
@@ -2980,7 +2980,7 @@ p {
   .final-heart-bubble {
     left: calc(50% + 40px);
     top: auto;
-    bottom: 174px;
+    bottom: 142px;
     width: 52px;
     height: 43px;
   }
