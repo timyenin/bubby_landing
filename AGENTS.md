@@ -1,85 +1,51 @@
-# AGENTS.md — Bubby Landing Page
+# AGENTS.md — Bubby waitlist page
 
 ## Project goal
-Build the Bubby landing page as a **separate Vite + React + TypeScript repo**. This is not the main Bubby app repo.
+The public waitlist page for Bubby, a **separate Vite + React + TypeScript repo** from the iOS app (`timyenin/bubby`). It should look and behave like the app, so people meet the same Bubby they will download.
 
-The final page should be a faithful working implementation of `public/assets/reference/landing-page-preview.png`, not a generic landing page.
+## Source of truth: the app
+The page copies the app; it never redraws it.
 
-## Product positioning
-Bubby is a stress-free meal planning companion. The page must make this clear:
+- Sprites: the app's 64x64 frames in `ios/Bubby/Bubby/Assets.xcassets/bubby_*`, listed in `BubbyProductionSpriteManifest.swift`.
+- Animation timing: `BubbyIdleAnimation.swift` (idle holds 3-7 s, then a 150-300 ms blink or glance) and `BubbySpriteAnimationCue.framesPerSecond` (12 fps for everything else). Ported in `src/data/bubbySprites.ts`.
+- Colors: the ten fills in `BubbyColorOption.swift`, applied with the app's recolor rule (`BubbySpriteTint.swift`), ported in `src/lib/bubbyTint.ts`.
+- Theme: the light pink and dark mint tokens in `BubbyTheme.swift`; Dogica is the pixel font.
+- Rooms and food pictures: `scene_*` and `bubby_photo_*` in the app's asset catalog.
+- Copy: the App Store screenshots and the app's own wording. Only claim features the app ships.
 
-- Bubby helps users decide what to eat.
-- Bubby reduces meal-planning stress and decision fatigue.
-- Bubby supports easy check-ins and low-pressure consistency.
-- Bubby is not just another habit tracker.
-- The virtual pet layer exists to make healthy routines feel emotionally engaging and easy to return to.
+Run `scripts/sync-app-art.sh` to recopy the art from the app repo (defaults to `../bubby` at `origin/main`).
 
-## Visual target
-Use these files as the source of truth:
+## Design rules (from the app)
+- Flat colors and 2px borders. No gradients, drop shadows or glassmorphism.
+- Pixel art always uses `image-rendering: pixelated`.
+- Dogica for headings, labels and chat; the system font for paragraphs.
+- Use public runtime paths such as `/assets/bubby/bubby_idle_neutral.png`, never `public/assets/...`.
+- Respect `prefers-reduced-motion`: Bubby stays on its first frame.
+- The page must work at phone width.
 
-- `public/assets/reference/landing-page-preview.png` — final visual concept target.
-- `public/assets/reference/landing-page-section-map.png` — annotated section boundaries.
-- `public/assets/reference/bubby-sprite-sheet-reference.png` — original Bubby sprite reference.
-- `public/assets/sprites/bubby-animation-map.json` — sprite animation map.
+## Waitlist and launch
+- The form posts to `/api/waitlist` (Vercel function), which emails each signup to `WAITLIST_TO_EMAIL` through Resend. See `README.md`.
+- `VITE_BUBBY_LAUNCH_STATUS=live` swaps the waitlist forms for an App Store link and updates the status pill, nav button, FAQ and closing section.
+- Pushing to GitHub deploys through Vercel; don't push unless a deploy is intended.
 
-Do not use the preview screenshot as a page background. Rebuild the design with semantic HTML, React components, CSS, and the provided assets.
-
-## Implementation constraints
-- Use the existing Vite React TypeScript project.
-- Keep dependencies minimal.
-- CSS-only animation is preferred.
-- Use `image-rendering: pixelated` for Bubby sprites.
-- Use public asset runtime paths such as `/assets/sprites/bubby_states/idle/idle_01.png`.
-- Do not use `public/assets/...` in JSX/CSS runtime paths.
-- Do not add a backend, auth, database, or real waitlist integration.
-- Buttons may be placeholders, but they should look and behave like real UI.
-- The page must be responsive.
-
-## Expected file organization
-Prefer this structure:
+## Files
 
 ```txt
+scripts/sync-app-art.sh     copies sprites, rooms, food pictures, font and icon from the app
 src/
-  App.tsx
-  main.tsx
-  styles.css
-  components/
-    NavBar.tsx
-    BubbySprite.tsx
-    Hero.tsx
-    ProblemCards.tsx
-    FeatureCards.tsx
-    MealDemo.tsx
-    HowItWorks.tsx
-    PersonalityShowcase.tsx
-    FinalCTA.tsx
-  data/
-    bubbyContent.ts
-    bubbySprites.ts
+  App.tsx                   page order + shared Bubby color
+  styles.css                all styles; tokens at the top
+  components/               one file per section, plus BubbySprite, RoomScene, WaitlistForm, PixelArt
+  data/bubbyContent.ts      all page copy
+  data/bubbySprites.ts      frames + timing (mirrors the app)
+  data/bubbyColors.ts       the ten Bubby colors
+  lib/bubbyTint.ts          recolor port
+  lib/launch.ts             in_review / live switch
 ```
 
 ## Required checks
-Before finishing, run:
 
-```powershell
+```sh
+npm run lint
 npm run build
 ```
-
-If available and useful, also run:
-
-```powershell
-npm run dev
-```
-
-## Definition of done
-- The app builds without TypeScript or Vite errors.
-- The page visually follows the provided concept.
-- The hero has a large pastel LCD/Tamagotchi-style panel with interactive Bubby buttons.
-- Bubby sprite states animate or swap when buttons are pressed.
-- The product message emphasizes stress-free meal planning and simple habits.
-- The layout works on desktop and mobile.
-- The final response includes:
-  - What changed
-  - Files modified
-  - Checks run
-  - Known risks or follow-up work

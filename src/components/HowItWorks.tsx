@@ -3,25 +3,28 @@ import { BubbySprite } from './BubbySprite';
 
 export function HowItWorks() {
   return (
-    <section className="how-section section-band" id="how-it-works" aria-labelledby="how-title">
-      <div className="page-grid">
-        <h2 id="how-title" className="section-title">
-          <span aria-hidden="true">*</span>
-          how bubby works
-          <span aria-hidden="true">*</span>
-        </h2>
-        <div className="steps-grid">
-          {howItWorks.map((step, index) => (
-            <article className="soft-card step-card" key={step.step}>
-              <span className="step-number">{step.step}</span>
-              <div className="step-copy">
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
+    <section className="section-band section-band--panel" id="how-it-works" aria-labelledby="how-title">
+      <div className="page-width section-stack">
+        <div className="section-heading">
+          <h2 id="how-title">how bubby works</h2>
+          <p>no forms, no food database to scroll. the chat is the whole app.</p>
+        </div>
+        <div className="card-grid card-grid--three">
+          {howItWorks.map((item) => (
+            <article className="card step-card" key={item.step}>
+              <div className="step-card__top">
+                <span className="step-card__number">{item.step}</span>
+                <BubbySprite animation={item.animation} className="step-card__bubby" />
               </div>
-              <div className="step-art" aria-hidden="true">
-                <BubbySprite state={step.state} size="small" />
-              </div>
-              {index < howItWorks.length - 1 ? <span className="step-arrow" aria-hidden="true">-&gt;</span> : null}
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              {item.step === '2' ? (
+                <div className="calorie-readout">
+                  <span className="calorie-readout__label">calories</span>
+                  <span className="calorie-readout__value">1220 / 2200 cal</span>
+                  <span>980 cal remaining</span>
+                </div>
+              ) : null}
             </article>
           ))}
         </div>
