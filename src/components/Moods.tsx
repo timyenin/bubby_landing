@@ -1,5 +1,37 @@
+import { useEffect, useState } from 'react';
 import { moods } from '../data/bubbyContent';
+import { bubbyFrames, type BubbyAnimation } from '../data/bubbySprites';
 import { BubbySprite } from './BubbySprite';
+
+// Single-frame tricks (x eyes) play like they do in the app: shown for 1.5 s,
+// then back to idle for a moment, so the tile doesn't look frozen.
+const trickShowMs = 1500;
+const trickRestMs = 2500;
+
+function useTrickLoop(animation: BubbyAnimation): BubbyAnimation {
+  const isTrick = bubbyFrames[animation].length === 1;
+  const [showing, setShowing] = useState(true);
+
+  useEffect(() => {
+    if (!isTrick) return;
+    const timer = window.setTimeout(() => setShowing((current) => !current), showing ? trickShowMs : trickRestMs);
+    return () => window.clearTimeout(timer);
+  }, [isTrick, showing]);
+
+  return isTrick && !showing ? 'idle' : animation;
+}
+
+function MoodCard({ mood }: { mood: (typeof moods)[number] }) {
+  const animation = useTrickLoop(mood.animation);
+
+  return (
+    <li className="card mood-card">
+      <BubbySprite animation={animation} alt={`bubby, ${mood.title}`} className="mood-card__bubby" />
+      <span className="mood-card__title">{mood.title}</span>
+      <span className="mood-card__note">{mood.note}</span>
+    </li>
+  );
+}
 
 export function Moods() {
   return (
@@ -11,11 +43,7 @@ export function Moods() {
         </div>
         <ul className="mood-grid">
           {moods.map((mood) => (
-            <li className="card mood-card" key={mood.animation}>
-              <BubbySprite animation={mood.animation} alt={`bubby, ${mood.title}`} className="mood-card__bubby" />
-              <span className="mood-card__title">{mood.title}</span>
-              <span className="mood-card__note">{mood.note}</span>
-            </li>
+            <MoodCard mood={mood} key={mood.animation} />
           ))}
         </ul>
       </div>
